@@ -13,3 +13,9 @@ def is_safe_query(query):
         if re.search(r'\b' + re.escape(word) + r'\b', query_lower):
             return False
     return True
+
+if is_safe_query("Christian hope resources"):
+    print("Safe!")
+else:
+    print("Blocked!")
+
