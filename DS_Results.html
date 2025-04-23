@@ -53,4 +53,20 @@
   </div>
 
 </body>
+
+<body>
+  <h1>Search Results</h1>
+
+  {% if blocked %}
+    <p style="color: red;">⚠️ Sorry, this search query includes terms that aren't allowed on DoveSearch.</p>
+  {% else %}
+    {% for result in results %}
+    <div class="result">
+      <a href="{{ result['link'] }}" target="_blank">{{ result['title'] }}</a>
+      <p>{{ result['snippet'] }}</p>
+    </div>
+    {% endfor %}
+  {% endif %}
+</body>
+  
 </html>
